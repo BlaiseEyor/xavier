@@ -1,0 +1,17 @@
+  /* Animation marquee */
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.marquee {
+    display: flex;
+    gap: 2rem;
+    animation: marquee 5s linear infinite; /* 15s is the duration of one complete scroll */
+    white-space: nowrap;
+}
+
+/* Dupliquer le contenu pour un défilement continu */
+.marquee img {
+    flex-shrink: 0;
+}
