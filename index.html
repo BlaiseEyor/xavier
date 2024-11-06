@@ -48,15 +48,36 @@
               <h3 class="text-3xl font-extrabold tracking-tight leading-none text-white">Partenaires</h3>
           </div>
       </div>
-      <div class="bg-gray-900 shadow dark:bg-gray-900">
-          <!-- Ajout de overflow-x-auto pour le défilement horizontal sur mobile -->
-          <div class="flex items-center justify-start gap-8 overflow-x-auto p-4">
+      <div class="bg-gray-900 shadow dark:bg-gray-900 overflow-hidden">
+          <div class="marquee flex items-center justify-center gap-8 py-4">
               <img src="./static/images/partenaires/parte1.png" class="w-40 h-40 object-cover" alt="Logo Partenaire 1">
               <img src="./static/images/partenaires/parte2.png" class="w-40 h-40 object-cover" alt="Logo Partenaire 2">
               <img src="./static/images/partenaires/padimi.png" class="w-40 h-40 object-cover" alt="Logo Partenaire 3">
+            
           </div>
       </div>
   </section>
+  
+  <style>
+  /* Animation marquee */
+  @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+  }
+  
+  .marquee {
+      display: flex;
+      gap: 2rem;
+      animation: marquee 5s linear infinite; /* 15s is the duration of one complete scroll */
+      white-space: nowrap;
+  }
+  
+  /* Dupliquer le contenu pour un défilement continu */
+  .marquee img {
+      flex-shrink: 0;
+  }
+  </style>
+  
   
 
     <div class="h-10 lg:h-24"></div>
